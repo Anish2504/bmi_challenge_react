@@ -1,8 +1,15 @@
 import React from "react";
 
 const Form = props => {
+
   return (
-    <form onSubmit={props.onSubmitHandler}>
+    <form id="BmiForm" onSubmit={props.onSubmitHandler}>
+
+    <select id="select-option" className="systemSelection" onChange={props.onChangeHandler}>
+      <option value="metric">metric</option>
+      <option value="imperial">imperial</option>      
+    </select>
+
       <label htmlFor="weight">Weight</label>
       <input
         type="number"

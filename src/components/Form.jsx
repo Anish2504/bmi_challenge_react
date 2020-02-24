@@ -2,12 +2,12 @@ import React from "react";
 
 const Form = props => {
   return (
-    <form>
+    <form onSubmit={props.onSubmitHandler}>
       <label htmlFor="weight">Weight</label>
       <input
         type="number"
         required
-        placeholder="Weight in Kgs"
+        placeholder="Weight in kgs"
         value={props.weight}
         name="weight"
         id="weight"
@@ -27,4 +27,5 @@ const Form = props => {
     </form>
   );
 };
- export default Form;
+
+export default Form;

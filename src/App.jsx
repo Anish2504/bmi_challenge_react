@@ -11,7 +11,7 @@ class App extends Component {
     height: "",
     bmiValue: "",
     bmiMessage: "",
-    systemSelection:"metric"
+    systemSelection:""
    
   };
 
@@ -30,10 +30,8 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <div>
-          <h2> This is the metric form</h2>
+    return (      
+        <div>          
           <Form                             
             weight={this.state.weight}
             height={this.state.height}
@@ -47,8 +45,7 @@ class App extends Component {
               bmiMessage={this.state.bmiMessage}
             />
           )}
-        </div>
-      </div>
+        </div>      
     );
   }
 }

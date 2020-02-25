@@ -7,14 +7,11 @@ const Form = props => {
 
   return (
     <form onSubmit={props.onSubmitHandler}>
-
-    <select id="select-method" name="systemSelection" 
-    onChange={props.onChangeHandler}>
-
-      <option value="metric">metric</option>
-      <option value="imperial">imperial</option>      
-    </select>
-
+      <select id="select-method" name="systemSelection"
+        onChange={props.onChangeHandler}>
+        <option value="metric">metric</option>
+        <option value="imperial">imperial</option>
+      </select>
       <label htmlFor="weight">Weight</label>
       <input
         type="number"

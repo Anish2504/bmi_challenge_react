@@ -2,12 +2,16 @@ import React from "react";
 import { mount } from "enzyme";
 import App from "../App";
 
+
 describe("App component", () => {
   const wrapper = mount(<App />);
   it("Counts using the metric method", () => {
     wrapper
-      .find("#select-method")
-      .simulate("change", { target: { value: "metric" } });
+      .find('select[name="systemSelection"]')
+      .simulate("change", { target: {
+        name: 'systemSelection',
+        value: 'metric'
+      }})
     wrapper
       .find("#weight")
       .simulate("change", { target: { name: "weight", value: "90" } });
@@ -22,8 +26,11 @@ describe("App component", () => {
 
   it("Counts using the imperial method", () => {
     wrapper
-      .find("#select-method")
-      .simulate("change", { target: { value: "imperial" } });
+      .find('select[name="systemSelection"]')
+      .simulate("change", { target: {
+        name: 'systemSelection',
+        value: 'imperial'
+      }})
     wrapper
       .find("#weight")
       .simulate("change", { target: { name: "weight", value: "192" } });

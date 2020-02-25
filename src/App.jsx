@@ -11,7 +11,7 @@ class App extends Component {
     height: "",
     bmiValue: "",
     bmiMessage: "",
-    systemSelection:""
+    systemSelection:"metric"
    
   };
 
@@ -32,12 +32,12 @@ class App extends Component {
   render() {
     return (      
         <div>          
-          <Form                             
+          <Form
+            systemSelection={this.state.systemSelection}                             
             weight={this.state.weight}
             height={this.state.height}
             onChangeHandler={this.onChangeHandler}
-            onSubmitHandler={this.onSubmitHandler}
-            systemSelection={this.state.systemSelection}
+            onSubmitHandler={this.onSubmitHandler}            
           />
           {this.state.bmiValue && (
             <Message

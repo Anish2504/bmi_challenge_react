@@ -4,21 +4,27 @@ import Form from "./components/Form";
 import Message from "./components/Message";
 import { calculateBmi } from "./helpers/bmiHelper";
 
+
 class App extends Component {
   state = {
     weight: "",
     height: "",
     bmiValue: "",
-    bmiMessage: ""
+    bmiMessage: "",
+    systemSelection:"metric"
+   
   };
 
-  onChangeHandler = e => this.setState({ [e.target.name]: e.target.value });
+  onChangeHandler = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  };
 
   onSubmitHandler = e => {
     e.preventDefault();
     const [bmiValue, bmiMessage] = calculateBmi(
       this.state.weight,
-      this.state.height
+      this.state.height,
+      this.state.systemSelection
     );
     this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage });
   };
@@ -26,18 +32,22 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Form
-          weight={this.state.weight}
-          height={this.state.height}
-          onChangeHandler={this.onChangeHandler}
-          onSubmitHandler={this.onSubmitHandler}
-        />
-        {this.state.bmiValue && (
-          <Message
-            bmiValue={this.state.bmiValue}
-            bmiMessage={this.state.bmiMessage}
+        <div>
+          <h2> This is the metric form</h2>
+          <Form                             
+            weight={this.state.weight}
+            height={this.state.height}
+            onChangeHandler={this.onChangeHandler}
+            onSubmitHandler={this.onSubmitHandler}
+            systemSelection={this.state.systemSelection}
           />
-        )}
+          {this.state.bmiValue && (
+            <Message
+              bmiValue={this.state.bmiValue}
+              bmiMessage={this.state.bmiMessage}
+            />
+          )}
+        </div>
       </div>
     );
   }

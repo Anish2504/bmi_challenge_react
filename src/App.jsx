@@ -34,12 +34,12 @@ class App extends Component {
       <div>
         <div>
           <h2> This is the metric form</h2>
-          <Form
-            systemSelection={this.state.systemSelection}                 
+          <Form                             
             weight={this.state.weight}
             height={this.state.height}
             onChangeHandler={this.onChangeHandler}
             onSubmitHandler={this.onSubmitHandler}
+            systemSelection={this.state.systemSelection}
           />
           {this.state.bmiValue && (
             <Message

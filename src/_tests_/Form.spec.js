@@ -30,7 +30,7 @@ describe("Form", () => {
   });
 
   it("on submit the onSubmitHandler is being called", () => {
-    wrapper.find("#form").simulate("submit");
+    wrapper.find("form").simulate("submit");
     expect(handleSubmit).toHaveBeenCalled();
   });
 });
